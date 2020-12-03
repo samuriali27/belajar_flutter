@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(new MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: new HalHallo(),
   ));
 }
@@ -12,7 +13,10 @@ class HalHallo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: new Center(
-      child: new Text("Hallo world EDIT"),
+      child: Text(
+        "Hallo world EDIT",
+        style: TextStyle(fontWeight: FontWeight.bold, color: Colors.red),
+      ),
     ));
   }
 }
