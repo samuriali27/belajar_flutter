@@ -11,7 +11,7 @@ class HalHallo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: new Center(
-      child: new Text("Hallo world"),
+      child: new Text("Hallo world EDIT"),
     ));
   }
 }
