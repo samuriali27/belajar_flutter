@@ -2,27 +2,24 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(new MaterialApp(
-    home: new Halamansatu(),
+    title: "Belajar flutter",
+    home: new HalamanSatu(),
   ));
 }
 
-class Halamansatu extends StatelessWidget {
+class HalamanSatu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        body: new Center(
-      child: new Container(
-        //id kotak
-        color: Colors.blue[900],
-        width: 200.0,
-        height: 100.0,
-        child: new Center(
-            child: new Icon(
-          Icons.android,
-          color: Colors.yellow,
-          size: 70.0,
-        )),
+      backgroundColor: Colors.yellow[600],
+      appBar: new AppBar(
+        backgroundColor: Colors.red[800],
+        leading: new Icon(Icons.home),
+        title: new Center(
+          child: new Text("Belajar flutter"),
+        ),
+        actions: <Widget>[new Icon(Icons.search)],
       ),
-    ));
+    );
   }
 }
