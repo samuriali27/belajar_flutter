@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 void main() {
   runApp(new MaterialApp(
-    title: "Card & parsing",
     home: new HalSatu(),
+    title: "Navigasi",
+    routes: <String, WidgetBuilder>{
+      '/Halsatu': (BuildContext context) => new HalSatu(),
+      '/Haldua': (BuildContext context) => new Haldua(),
+    },
   ));
 }
 
@@ -12,63 +15,43 @@ class HalSatu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        appBar: new AppBar(
-          title: new Text("Card & parsing"),
-        ),
-        body: new Container(
-          child: new Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              new CardSaya(
-                icon: Icons.home,
-                teks: "Home",
-                warnaIcon: Colors.brown,
-              ),
-              new CardSaya(
-                icon: Icons.favorite,
-                teks: "favorite",
-                warnaIcon: Colors.pink,
-              ),
-              new CardSaya(
-                icon: Icons.place,
-                teks: "place",
-                warnaIcon: Colors.blue,
-              ),
-              new CardSaya(
-                icon: Icons.settings,
-                teks: "settings",
-                warnaIcon: Colors.black,
-              )
-            ],
+      appBar: new AppBar(
+        title: new Text("musik"),
+      ),
+      body: new Center(
+        child: new IconButton(
+          icon: new Icon(
+            Icons.headset,
+            size: 50.0,
           ),
-        ));
+          onPressed: () {
+            Navigator.pushNamed(context, '/Haldua');
+          },
+        ),
+      ),
+    );
   }
 }
 
-class CardSaya extends StatelessWidget {
-  CardSaya({this.icon, this.teks, this.warnaIcon});
-  final IconData icon;
-  final String teks;
-  final Color warnaIcon;
-
+class Haldua extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Container(
-      padding: new EdgeInsets.all(10.0),
-      child: new Card(
-          child: new Column(
-        children: <Widget>[
-          new Icon(
-            icon,
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text("SPEAKER"),
+      ),
+      body: new Center(
+        child: new IconButton(
+          icon: new Icon(
+            Icons.speaker,
             size: 50.0,
-            color: warnaIcon,
+            color: Colors.red,
           ),
-          new Text(
-            teks,
-            style: new TextStyle(fontSize: 20.0),
-          )
-        ],
-      )),
+          onPressed: () {
+            Navigator.pushNamed(context, '/Halsatu');
+          },
+        ),
+      ),
     );
   }
 }
